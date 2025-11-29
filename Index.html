@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Beautiful Calculator — Enhanced</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap" role="application" aria-label="Calculator">
+<header>
+<div class="logo">C</div>
+<div class="title">
+<h1>Beautiful Calculator</h1>
+<p id="modeLabel">Standard • Theme: <span id="themeName">Ocean</span></p>
+</div>
+<div class="controls">
+<button id="modeToggle" class="small">Scientific</button>
+<select id="themeSelect" class="small" aria-label="Choose theme">
+<option value="ocean">Ocean</option>
+<option value="sunset">Sunset</option>
+<option value="forest">Forest</option>
+<option value="midnight">Midnight</option>
+</select>
+</div>
+</header>
+
+
+<section class="calculator">
+<div class="display" id="display" aria-live="polite">
+<div class="history" id="history">&nbsp;</div>
+<div class="result" id="result">0</div>
+</div>
+
+
+<div class="keys" id="keys" role="group" aria-label="Calculator keypad">
+<!-- top row actions -->
+<button class="key action" data-key="clear">AC</button>
+<button class="key action" data-key="back">⌫</button>
+<button class="key action" data-key="percent">%</button>
+<button class="key operator" data-key="/">÷</button>
+
+
+<!-- scientific row (hidden in standard) -->
+<div id="sciRow" class="sci-row hidden">
+<button class="key sci" data-key="sin">sin</button>
+<button class="key sci" data-key="cos">cos</button>
+<button class="key sci" data-key="tan">tan</button>
+<button class="key sci" data-key="sqrt">√</button>
+
+
+<button class="key sci" data-key="ln">ln</button>
+<button class="key sci" data-key="^">^</button>
+<button class="key sci" data-key="pi">π</button>
+<button class="key sci" data-key="e">e</button>
+</div>
+<!-- numeric keypad -->
+<button class="key" data-key="7">7</button>
+<button class="key" data-key="8">8</button>
+<button class="key" data-key="9">9</button>
+<button class="key operator" data-key="*">×</button>
+
+
+<button class="key" data-key="4">4</button>
+<button class="key" data-key="5">5</button>
+<button class="key" data-key="6">6</button>
+<button class="key operator" data-key="-">−</button>
+
+
+<button class="key" data-key="1">1</button>
+<button class="key" data-key="2">2</button>
+<button class="key" data-key="3">3</button>
+<button class="key operator" data-key="+">+</button>
+
+
+<button class="key zero" data-key="0">0</button>
+<button class="key" data-key=".">.</button>
+<button class="key equal" data-key="=">=</button>
+</div>
+
+
+<div class="footer">
+<div class="left">Tip: Keyboard supported. Press <kbd>Enter</kbd> to evaluate.</div>
+<div class="right">
+<label class="switch">
+<input type="checkbox" id="soundToggle" checked>
+<span class="slider"></span>
+</label>
+<span class="muteLabel">Sound</span>
+</div>
+</div>
+</section>
+</main>
+
+
+<!-- Small embedded click sound: replace with 'click.wav' for better quality -->
+<audio id="clickSound" preload="auto">
+<source src="data:audio/wav;base64,//uQZAAAAAAAAAAAAAAAAAAAAAA" type="audio/wav">
+</audio>
+
+
+<script src="app.js"></script>
+</body>
+</html>
